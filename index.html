@@ -1,0 +1,181 @@
+<html>
+
+<head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Omar El Mokhtar" />
+    <meta name="description" content="weather app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="html,css,js,ajax,weather" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    
+    <nav class="navbar py-3 navbar-expand-lg navbar-light  w-100 ">
+        <div class="container  ">
+            <a class="navbar-brand  d-flex align-items-center" href="#">
+                <img src="img/logo@2x.png" alt="">
+                <div>
+                    <h3 class="mb-0 fs-5">Weather</h3>
+                    <span >Tagline goes here</span>
+                </div>
+            </a>
+            <button class="navbar-toggler border-0 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="none" aria-label="Toggle navigation">
+            <span class=" text-white"><i class="fas fa-bars bar-ico"></i></span>
+            </button>
+            <div class="collapse navbar-collapse w-75  justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#News">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#Live Cameras">Live Cameras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#Photos">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#Contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="weather">
+        <div class="overlay"></div>
+        <div class="container position-relative">
+
+            <div class="FindLocation position-relative">
+                <input id="location" class="form-control" type="text" placeholder="Find Your Location....">
+            </div>
+
+            <div class="forecast-table py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div  class="forecast first ">
+                                <div class="forecast-header d-flex justify-content-between p-2">
+                                    <span id="today"></span>
+                                    <span id="month"></span>
+                                </div>
+
+                                <div class="forecast-body p-4 ">
+                                    <div id="location_f" class=" fs-5 fw-bold"></div>
+                                    <div class="temprature d-flex justify-content-evenly my-4">
+                                        <div>
+                                            <h2 id="degree" class="me-lg-0 me-5 d-inline-block"></h2>
+                                            <h2 class="degree-temp d-inline-block"><sup>o</sup>C</h2>
+                                        </div>
+                                        <img id="iconWeather" src="img/weather.png" alt="">
+                                    </div>
+                                    <div id="custom" class="mb-3"></div>
+                                    <div class="feat d-flex">
+                                        <ul class="list-unstyled d-flex mb-0">
+                                            <li>
+                                                <img src="img/icon-umberella.png" alt="">
+                                                <span id="hunmidity" class="me-3"></span>
+                                            </li>
+                                            <li>
+                                                <img src="img/icon-wind.png" alt=""> 
+                                                <span id="wind_kph" class="me-3"></span>
+                                            </li>
+                                            <li>
+                                                <img src="img/icon-compass.png" alt="">
+                                                <span id="wind_Air"><img src="img/icon-compass.png" alt=""> </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>                
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="forecast second text-center h-100">
+                                <div class="forecast-header secondHeader d-flex justify-content-between  p-2">
+                                    <span class="nextDay"></span>
+                                    <span class="nextDate"></span>
+                                </div>
+
+                                <div class="forecast-body secondBody pt-5 p-3">
+                                    <div class=" mb-3">
+                                        <img class="nextDay-icon" src="img/weather.png" alt="">
+                                        <div>
+                                            <h3 class="max-degree d-inline-block"></h3>
+                                            <h3 class="d-inline-block"><sup>o</sup>C</h3>
+                                        </div>
+                                        
+                                        <small class="min-degree"></small><small><sup>o</sup>C</small>
+                                    </div>
+                                    <div class="nextDay_custom mb-3"></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="forecast third text-center h-100">
+
+                                <div class="forecast-header thirdHeader d-flex justify-content-between p-2">
+                                    <span class="nextDay"></span>
+                                    <span class="nextDate"></span>
+                                </div>
+
+                                <div class="forecast-body pt-5 p-3">
+                                    <div class=" mb-3">
+                                        <img class="nextDay-icon" src="img/weather.png" alt="">
+                                        <div>
+                                            <h3 class="max-degree d-inline-block"></h3>
+                                            <h3 class="d-inline-block"><sup>o</sup>C</h3>
+                                        </div>
+                                        <small class="min-degree"></small><small><sup>o</sup>C</small>
+                                    </div>
+                                    <div class="nextDay_custom mb-3"></div>
+                                </div>
+                            </div>
+                            
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="position-relative mb-4">
+                        <form id="subscrib_form" >
+                            <input id="userEmail" class="form-control" type="text" placeholder="Enter your email to subscribe...">
+                            <input id="BtnSubEmail" class="btnFindSubs btn text-white" type="submit" value="Subscribe" disabled>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="social d-flex align-items-center  mb-md-0 mb-3">
+                        <a class="text-decoration-none text-info m-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="text-decoration-none text-info m-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="text-decoration-none text-info m-2" href="#"><i class="fab fa-google-plus-g"></i></a>
+                        <a class="text-decoration-none text-info m-2" href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-white-50 mb-0">Copyright 2014 Company name. Designed by Omar El Mokhtar. All rights reserved</p>
+        
+            </div>
+        </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
